@@ -2,6 +2,8 @@ import boto3
 import pandas as pd
 import io
 import s3fs
+import requests
+
 
 # 1. Initialize the S3 client
 s3_client = boto3.client('s3')
@@ -18,4 +20,9 @@ file_content = response['Body'].read()
 # 4. Load into Pandas using io.BytesIO
 df = pd.read_csv(io.BytesIO(file_content))
 
-print(df.columns)
+print(df["ocr_url"].iloc[0])
+
+
+url = df["ocr_url"].iloc[0]
+# Fetch the content
+response = requests.get(url)
