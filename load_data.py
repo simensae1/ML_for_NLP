@@ -1,6 +1,7 @@
 import boto3
 import pandas as pd
 import io
+import s3fs
 
 # 1. Initialize the S3 client
 s3_client = boto3.client('s3')
