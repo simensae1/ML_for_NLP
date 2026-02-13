@@ -7,7 +7,7 @@ import s3fs
 s3_client = boto3.client('s3')
 
 # 2. Get the object from S3
-bucket_name = 'sim'
+bucket_name = 'sim2023'
 file_key = '/mlfornlp/archelec_metadata.csv'
 
 response = s3_client.get_object(Bucket=bucket_name, Key=file_key)
