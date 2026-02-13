@@ -26,3 +26,9 @@ print(df["ocr_url"].iloc[0])
 url = df["ocr_url"].iloc[0]
 # Fetch the content
 response = requests.get(url)
+if response.status_code == 200:
+    # Use .text to get the content as a string
+    content = response.text
+    print(content[:500])  # Print the first 500 characters
+else:
+    print(f"Failed to retrieve file. Status code: {response.status_code}")
