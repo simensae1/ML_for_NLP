@@ -18,4 +18,4 @@ file_content = response['Body'].read()
 # 4. Load into Pandas using io.BytesIO
 df = pd.read_csv(io.BytesIO(file_content))
 
-print(df.head())
+print(df.columns)
